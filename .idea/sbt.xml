@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaSbtSettings">
+    <option name="maximumHeapSize" value="999" />
+    <option name="vmParameters" value="-XX:MaxPermSize=384M -Dhttp.proxyHost=VDCIi03Proxy.oneadr.net -Dhttp.proxyPort=8080 -Dhttps.proxyHost=VDCIi03Proxy.oneadr.net -Dhttps.proxyPort=8080" />
+  </component>
+</project>
