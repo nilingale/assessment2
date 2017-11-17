@@ -58,7 +58,8 @@ router.get('/users', (req, res, next) =>{
 
 //add user
 router.post('/user', (req, res, next) =>{
-    let newAirline = new User({
+    console.log(req);
+    let newUser = new User({
         firstName: req.body.firstName,
         middleName: req.body.middleName,
         lastName: req.body.lastName,
@@ -68,9 +69,9 @@ router.post('/user', (req, res, next) =>{
         isAdmin: req.body.isAdmin
     });
 
-    newAirline.save((err, user) =>{
+    newUser.save((err, user) =>{
         if(err){
-            res.json({msg: 'failed to add user'});
+            res.json({msg: 'failed to add user', error: err});
         }else{
             res.json({msg: 'User added successfully.'});
         }

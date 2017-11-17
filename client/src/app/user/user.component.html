@@ -1,3 +1,64 @@
-<p>
-  user works!
-</p>
+<div class="container" style="margin-bottom:40px;">
+  <h2 class = "page-header">Add User</h2>
+  <hr>
+  <form (submit)="addUser()">
+    <div class="row">
+      <div class="col-md-4 form-group">
+        <label>First Name</label>
+        <input type="text" [(ngModel)] = "firstName" name = "firstName" class = "form-control" required>
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Middle Name</label>
+        <input type = "text" [(ngModel)] = "middleName" name = "middleName" class = "form-control">
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Last Name</label>
+        <input type = "text" [(ngModel)] = "lastName" name = "lastName" class = "form-control" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 form-group">
+        <label>Email</label>
+        <input type = "email" [(ngModel)] = "email" name = "email" class = "form-control" required>
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Usr Name</label>
+        <input type = "text" [(ngModel)] = "userName" name = "userName" class = "form-control" required>
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Password</label>
+        <Input type="password" [(ngModel)] = "password" name = "password" class = "form-control" ngDefaultControl required>
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Confirm Password</label>
+        <Input type="password" name = "confirmPassword" class = "form-control" required>
+      </div>
+    </div>
+    <div><input type = "submit" value = "Add" class = "btn btn-success"></div>
+  </form>
+</div>
+
+<div class="container">
+  <h3>Users</h3>
+  <div>
+    <div class="row" style="padding: 5px;">
+      <div class="col-md-2"><label>First Name</label></div>
+      <div class="col-md-2"><label>Middle Name</label></div>
+      <div class="col-md-2"><label>Last Name</label></div>
+      <div class="col-md-2"><label>Email</label></div>
+      <div class="col-md-2"><label>Username</label></div>
+      <div class="col-md-2"><label></label></div>
+    </div>
+  </div>
+  <hr/>
+  <div *ngFor="let user of users">
+    <div class="row" style="padding: 5px;">
+      <div class="col-md-2">{{user.firstName}}</div>
+      <div class="col-md-2">{{user.middleName}}</div>
+      <div class="col-md-2">{{user.lastName}}</div>
+      <div class="col-md-2">{{user.email}}</div>
+      <div class="col-md-2">{{user.userName}}</div>
+      <div class="col-md-2"><input type="button" (click)="deleteUser(user._id)" value="Delete" class="btn btn-primary"></div>
+    </div>
+  </div>
+</div>

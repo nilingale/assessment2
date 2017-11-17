@@ -1,9 +1,9 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
+import {FormsModule} from '@angular/forms'
 import {AppComponent} from './app.component';
 import {UserComponent} from './user/user.component';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {HttpClientModule, HttpClient, HttpHeaders} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,9 +12,10 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [HttpClientModule, HttpClient],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {
