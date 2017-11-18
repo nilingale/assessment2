@@ -40,6 +40,8 @@ router.delete('/airline/:id', (req, res, next) =>{
         if(err){
             res.json(err);
         }else{
+            console.log('in route.js apis file ');
+            console.log(result);
             res.json(result);
         }
     });

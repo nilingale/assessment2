@@ -4,11 +4,14 @@ import {FormsModule} from '@angular/forms'
 import {AppComponent} from './app.component';
 import {UserComponent} from './user/user.component';
 import {HttpClientModule, HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpModule} from '@angular/http';
+import { AirlineComponent } from './airline/airline.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    AirlineComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {User} from './user';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { User } from '../models/user';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -19,7 +19,7 @@ export class UserService {
   //Add User
   addUser(newUser: User): Observable<User> {
     var headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post<User>('http://localhost:3000/api/user', newUser, {headers: headers}).pipe(
+    return this.http.post<User>('http://localhost:3000/api/user', newUser, { headers: headers }).pipe(
       tap((user: User) => this.log('added user w/ id=${user._id}')),
       catchError(this.handleError<User>('addUser'))
     );
@@ -39,7 +39,7 @@ export class UserService {
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
-  private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
