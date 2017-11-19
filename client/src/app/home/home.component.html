@@ -1,7 +1,24 @@
-<!--<h1>Welcome to Airline Database!</h1>
-<nav>
+<h3>Year top 10</h3>
+<!--<nav>
   <a routerLink="/home">Home</a>
   <a routerLink="/admin">Admin</a>
   <a routerLink="/airline">Airline</a>
   <a routerLink="/user">User</a>
 </nav>-->
+<div class="row">
+  <div class="col-md-4 air" *ngFor="let air of top10Year">
+    <div class="row container">
+      <div class="col-sm-12 noPadding">
+        <img src="logo.png" class="logo" />
+        <div class="row details">
+          <div class="col-md-12 name">{{air.name}}</div>
+          <div class="col-md-6 founded">{{air.founded | date:'dd.MM.yyyy'}}</div>
+          <div class="col-md-6 rating">{{air.rating}}</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 slogen">{{air.slogen}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

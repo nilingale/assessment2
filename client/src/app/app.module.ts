@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms'
+import { CommonModule } from '@angular/common';
 import {AppComponent} from './app.component';
 import {UserComponent} from './user/user.component';
 import {HttpClientModule, HttpClient, HttpHeaders} from '@angular/common/http';
@@ -21,6 +22,7 @@ import { AdminComponent } from './admin/admin.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    CommonModule,
     AppRoutingModule
   ],
   providers: [HttpClientModule],
