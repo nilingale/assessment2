@@ -13,9 +13,9 @@ export class AirlineComponent implements OnInit {
   name: String;
   logo: String;
   founded: Date;
-  hubs: Array<String>;
-  focusCities: Array<String>;
-  destinations: Array<String>;
+  hubs: String;
+  focusCities: String;
+  destinations: String;
   originCountry: String;
   slogen: String;
   rewards: String;
@@ -25,24 +25,25 @@ export class AirlineComponent implements OnInit {
   }
 
  addAirline(){
+    console.log(this.originCountry);
   const newAirline: Airline = {
     name: this.name,
     logo: this.logo,
     founded: this.founded,
-    hubs: this.hubs,
-    focusCities: this.focusCities,
-    destinations: this.destinations,
+    hubs: this.hubs.split(","),
+    focusCities: this.focusCities.split(","),
+    destinations: this.destinations.split(","),
     originCountry: this.originCountry,
     slogen: this.slogen,
     rewards: this.rewards,
     rating: this.rating
   }
   this.airlineService.addAirline(newAirline)
-    .subscribe(user =>{
+    .subscribe(airline =>{
       this.getAirlines();
     });
  }
- 
+
  deleteAirline(id: any) {
   var airlines = this.airlines;
   this.airlineService.deleteAirline(id)

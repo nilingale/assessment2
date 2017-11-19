@@ -1,11 +1,61 @@
 <div class="container">
+  <h2>Add Airline</h2>
+  <hr>
+  <form (submit)="addAirline()">
+    <div class="row">
+      <div class="col-md-4 form-group">
+        <label>Name</label>
+        <input type="text" [(ngModel)] = "name" name = "name" class = "form-control" required>
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Founded</label>
+        <input type = "date" [(ngModel)] = "founded" name = "founded" class = "form-control">
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Origin Country</label>
+        <input type = "text" [(ngModel)] = "originCountry" name = "originCountry" class = "form-control" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 form-group">
+        <label>Slogen</label>
+        <input type = "email" [(ngModel)] = "slogen" name = "slogen" class = "form-control" required>
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Rewards</label>
+        <input type = "text" [(ngModel)] = "rewards" name = "rewards" class = "form-control" required>
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Rating</label>
+        <Input type="text" [(ngModel)] = "rating" name = "rating" class = "form-control" ngDefaultControl required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 form-group">
+        <label>Hubs</label>
+        <input type="text" [(ngModel)] = "hubs" name = "hubs" class = "form-control">
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Destinations</label>
+        <input type="text" [(ngModel)] = "destinations" name = "destinations" class = "form-control">
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Focus cities</label>
+        <input type="text" [(ngModel)] = "focusCities" name = "focusCities" class = "form-control">
+      </div>
+    </div>
+    <div><input type = "submit" value = "Add" class = "btn btn-success"></div>
+  </form>
+</div>
+
+<div class="container">
   <h3>Airlines</h3>
   <div>
     <div class="row" style="padding: 5px;">
       <div class="col-md-2"><label>Name</label></div>
       <div class="col-md-2"><label>Slogen</label></div>
       <div class="col-md-2"><label>Founded</label></div>
-      <div class="col-md-2"><label>Counry</label></div>
+      <div class="col-md-2"><label>Country</label></div>
       <div class="col-md-2"><label>Rating</label></div>
       <div class="col-md-2"><label></label></div>
     </div>
@@ -16,7 +66,7 @@
       <div class="col-md-2">{{airline.name}}</div>
       <div class="col-md-2">{{airline.slogen}}</div>
       <div class="col-md-2">{{airline.founded}}</div>
-      <div class="col-md-2">{{airline.country}}</div>
+      <div class="col-md-2">{{airline.originCountry}}</div>
       <div class="col-md-2">{{airline.rating}}</div>
       <div class="col-md-2"><input type="button" (click)="deleteAirline(airline._id)" value="Delete" class="btn btn-primary"></div>
     </div>
